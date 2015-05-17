@@ -6,12 +6,13 @@
 [faq]: http://blogs.esa.int/vmc/faq/
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/igo/
 
-This is a WIP fun project to decode the raw images from the [VMC][faq] on Mars Express, [demosaic][mosaic] the [Bayer pattern][bayer], and ultimately clean up and tune images.
+This is a fun project to decode the raw images from the [VMC][faq] on Mars Express, [demosaic][mosaic] the [Bayer pattern][bayer], and ultimately clean up and tune images.
 
 ### Status:
 
 - [x] Read RAW file
 - [x] Produce Grayscale PNG
+- [ ] Confirm pattern format(bggr?, rggb?)
 - [ ] Produce Colour PNG
 - [ ] Demosaic (various algorithms to explore)
 - [ ] Colour turning (various algorithms to explore)
@@ -36,7 +37,7 @@ cat("15-102_03.53.54_VMC_Img_No_33.raw") |> grayscale |> write("out.png")
 
 ![Simple Grayscale](15-102_03.53.54_VMC_Img_No_33-gray.png)
 
-...which isn't great, compared to the [same image run through a set of tools on FLickr](https://www.flickr.com/photos/esa_marswebcam/16968680597/). But the aim is to improve on what we have here.
+...which isn't great, compared to the [same image run through a set of tools on Flickr](https://www.flickr.com/photos/esa_marswebcam/16968680597/). But the aim is to improve on what we have here.
 
 
 ## Resources

@@ -10,14 +10,17 @@ object Image {
   val height = 480
 
   val upperLeft = new Point(0,0)
-  val offsets: Array[Int] = Array(0)
 
   def grayscale(bytes: Array[Byte]): BufferedImage = {
+    val bandOffsets: Array[Int] = Array(0)
+    val hasAlpha = false
+    val isAlphaPremultiplied = true
+
     val buffer = new DataBufferByte(bytes, bytes.length)
-    val raster = Raster.createInterleavedRaster(buffer, width, height, width, 1, offsets, upperLeft)
-    val cs = new ICC_ColorSpace(ICC_Profile.getInstance(ColorSpace.CS_GRAY))
-    val cm = new ComponentColorModel(cs, /*hasAlpha=*/false, /*isAlphaPremultiplied=*/true, Transparency.OPAQUE, DataBuffer.TYPE_BYTE)
-    new BufferedImage(cm, raster, true, null)
+    val raster = Raster.createInterleavedRaster(buffer, width, height, width, 1, bandOffsets, upperLeft)
+    val cs = ColorSpace.getInstance(ColorSpace.CS_GRAY)
+    val cm = new ComponentColorModel(cs, hasAlpha, isAlphaPremultiplied, Transparency.OPAQUE, DataBuffer.TYPE_BYTE)
+    new BufferedImage(cm, raster, isAlphaPremultiplied, /*properties=*/null)
   }
 
 }
