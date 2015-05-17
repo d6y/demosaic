@@ -6,7 +6,7 @@
 [faq]: http://blogs.esa.int/vmc/faq/
 [cc]: http://creativecommons.org/licenses/by-sa/3.0/igo/
 
-This is a WIP to decode the raw images from the [VMC][faq] on Mars Express, [demosaic][mosaic] the [Bayer pattern][bayer], and ultimately clean up and tune images.
+This is a WIP fun project to decode the raw images from the [VMC][faq] on Mars Express, [demosaic][mosaic] the [Bayer pattern][bayer], and ultimately clean up and tune images.
 
 ### Status:
 
@@ -32,9 +32,11 @@ import scalaz.syntax.id._
 cat("15-102_03.53.54_VMC_Img_No_33.raw") |> grayscale |> write("out.png")
 ```
 
-Produces:
+...produces...
 
 ![Simple Grayscale](15-102_03.53.54_VMC_Img_No_33-gray.png)
+
+...which isn't great, compared to the [same image run through a set of tools on FLickr](https://www.flickr.com/photos/esa_marswebcam/16968680597/). But the aim is to improve on what we have here.
 
 
 ## Resources
