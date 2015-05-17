@@ -1,18 +1,48 @@
+# Processing Visual Monitoring Camera (VMC) images from Mars Express
 
-Resources
+[mosaic]: http://en.wikipedia.org/wiki/Demosaicing
+[bayer]: http://en.wikipedia.org/wiki/Bayer_filter
+[vmc]: http://blogs.esa.int/vmc/
+[faq]: http://blogs.esa.int/vmc/faq/
+[cc]: http://creativecommons.org/licenses/by-sa/3.0/igo/
+
+This is a WIP to decode the raw images from the [VMC][faq] on Mars Express, [demosaic][mosaic] the [Bayer pattern][bayer], and ultimately clean up and tune images.
+
+### Status:
+
+- [x] Read RAW file
+- [x] Produce Grayscale PNG
+- [ ] Produce Colour PNG
+- [ ] Demosaic (various algorithms to explore)
+- [ ] Colour turning (various algorithms to explore)
+- [ ] Remove artifacts
+
+## Images
+
+Images from ESA are licensed under a [Creative Commons Attribution-ShareAlike 3.0 IGO License][cc].
+
+![Creative Commons License](https://i.creativecommons.org/l/by-sa/3.0/igo/88x31.png)
+
+## Grayscale Example
+
+This is a Scala project, so assumes build tools and a JVM:
+
+``` scala
+import scalaz.syntax.id._
+cat("15-102_03.53.54_VMC_Img_No_33.raw") |> grayscale |> write("out.png")
+```
+
+Produces:
+
+![Simple Grayscale](15-102_03.53.54_VMC_Img_No_33-gray.png)
 
 
-http://www.planetary.org/explore/space-topics/space-imaging/tutorials.html
+## Resources
 
-http://blogs.esa.int/vmc/
-http://blogs.esa.int/vmc/vmc-data-archive/
+- http://blogs.esa.int/vmc/vmc-data-archive/
 
-http://en.wikipedia.org/wiki/Demosaicing
-http://en.wikipedia.org/wiki/Bayer_filter
+- https://www.flickr.com/photos/esa_marswebcam/
 
-https://github.com/thebuzzmedia/imgscalr
-http://www.thebuzzmedia.com/downloads/software/imgscalr/javadoc/index.html
+- http://www.planetary.org/explore/space-topics/space-imaging/tutorials.html --- Varuous tutorials on using space agency images, and manipulating them in GIMP and Photoshop.
 
-ESA - European Space Agency, creativecommons.org/licenses/by-sa/3.0/igo/ CC BY-SA 3.0 IGO
 
-https://www.flickr.com/photos/esa_marswebcam/16968680597/in/dateposted/

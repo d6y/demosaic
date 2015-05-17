@@ -4,9 +4,6 @@ import java.awt.image._
 import java.awt.color._
 import java.awt.{Point,Transparency}
 
-//BufferedImage
-//TYPE_3BYTE_BGR
-
 object Image {
 
   val width  = 640
@@ -15,7 +12,7 @@ object Image {
   val upperLeft = new Point(0,0)
   val offsets: Array[Int] = Array(0)
 
-  def toImage(bytes: Array[Byte]): BufferedImage = {
+  def grayscale(bytes: Array[Byte]): BufferedImage = {
     val buffer = new DataBufferByte(bytes, bytes.length)
     val raster = Raster.createInterleavedRaster(buffer, width, height, width, 1, offsets, upperLeft)
     val cs = new ICC_ColorSpace(ICC_Profile.getInstance(ColorSpace.CS_GRAY))
