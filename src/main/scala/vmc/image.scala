@@ -30,22 +30,22 @@ object Image {
     //          COLUMNS
     //         EVEN | ODD
     //        +----+----+
-    //   EVEN | B  |  G |
-    //   ODD  | G  |  R |
+    //   EVEN | R  |  G |
+    //   ODD  | G  |  B |
     //        +---------+
 
     val bv = ByteVector(bytes)
 
-    val red   = bv and mkMask { case ( Row(Odd) , Col(Odd)  ) => on }
+    val red   = bv and mkMask { case ( Row(Even), Col(Even) ) => on }
     val green = bv and mkMask { case ( Row(Even), Col(Odd)  ) => on
                                 case ( Row(Odd) , Col(Even) ) => on }
-    val blue  = bv and mkMask { case ( Row(Even), Col(Even) ) => on }
+    val blue  = bv and mkMask { case ( Row(Odd) , Col(Odd)  ) => on }
 
-    val buffer = new DataBufferByte(Array(red.toArray,green.toArray,blue.toArray), bytes.length)
+    val buffer = new DataBufferByte(Array(red.toArray, green.toArray, blue.toArray), bytes.length)
 
     val bandOffsets: Array[Int] = Array(0,0,0)
-    val banks: Array[Int] = Array(0,1,2)
-    val raster = Raster.createBandedRaster(buffer, width, height, width, banks, bandOffsets, upperLeft)
+    val bankIndices: Array[Int] = Array(0,1,2)
+    val raster = Raster.createBandedRaster(buffer, width, height, width, bankIndices, bandOffsets, upperLeft)
 
     val cs = ColorSpace.getInstance(ColorSpace.CS_sRGB)
     val cm = new ComponentColorModel(cs, hasAlpha, isAlphaPremultiplied, Transparency.OPAQUE, DataBuffer.TYPE_BYTE)
@@ -53,7 +53,7 @@ object Image {
   }
 
   private[this] lazy val zero = { case _ => 0 }: PartialFunction[(Row,Col), Byte]
-  private[this] lazy val on: Byte = 255.asInstanceOf[Byte]
+  private[this] lazy val on: Byte = 255.toByte
 
   private[this] case class Row(value: EvenOrOdd) extends AnyVal
   private[this] case class Col(value: EvenOrOdd) extends AnyVal
