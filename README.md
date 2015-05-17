@@ -48,6 +48,12 @@ cat("15-102_03.53.54_VMC_Img_No_33.raw") |> grayscale |> write("out.png")
 
 - http://www.planetary.org/explore/space-topics/space-imaging/tutorials.html --- Varuous tutorials on using space agency images, and manipulating them in GIMP and Photoshop.
 
-- [From Monitoring Camera to Mars Webcam – Producing Outreach from Ops](http://esamultimedia.esa.int/multimedia/esoc/Mars_Webcam.pdf), Ormston, Denis, Peschke, & Schulster,
+- Ormston, Denis, Peschke, & Schulster, [From Monitoring Camera to Mars Webcam – Producing Outreach from Ops](http://esamultimedia.esa.int/multimedia/esoc/Mars_Webcam.pdf).
 
+- Ormston, Denis, Scuka (2010), [An Ordinary Camera in an Extraordinary Location: Outreach with the Mars Webcam](http://www.slideshare.net/esaops/an-ordinary-camera-in-an-extraordinary-location-outreach-with-the-mars-webcam).
 
+- Schulster _et al_. (2011), [Support to the CO2 Cloud Observations by Mars Express with the VMC Visual Monitoring Camera](http://meetingorganizer.copernicus.org/EPSC-DPS2011/EPSC-DPS2011-706-1.pdf).
+
+- [School report: Mars Webcam Project by Gymnasium Vaterstetten](http://blogs.esa.int/vmc/2010/08/) -- superb high school report.
+
+- [Flatfielding](http://en.wikipedia.org/wiki/Flat-field_correction) - what the heck's that?
