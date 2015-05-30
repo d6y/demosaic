@@ -12,7 +12,7 @@ This is a fun project to decode the raw images from the [VMC][faq] on Mars Expre
 
 - [x] Read RAW file
 - [x] Produce Grayscale PNG
-- [ ] Confirm pattern format(bggr?, rggb?)
+- [ ] Confirm pattern format (bggr?, rggb?)
 - [ ] Produce Colour PNG
 - [ ] Demosaic (various algorithms to explore)
 - [ ] Colour turning (various algorithms to explore)
@@ -57,3 +57,14 @@ cat("15-102_03.53.54_VMC_Img_No_33.raw") |> grayscale |> write("out.png")
 - [School report: Mars Webcam Project by Gymnasium Vaterstetten](http://blogs.esa.int/vmc/2010/08/) -- superb high school report.
 
 - [Flatfielding](http://en.wikipedia.org/wiki/Flat-field_correction) - what the heck's that?
+
+## Tools
+
+### Hex dumps
+
+It's handy to view the raw files as 640x480 hex dumps.  The command for this is:
+
+    $ od --width=640 -t x1 15-102_03.53.54_VMC_Img_No_33.raw
+
+On a Mac, `brew info coreutils` first, and then the command is `god`
+
