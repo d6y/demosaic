@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/d6y/demosaic.png?label=ready&title=Ready)](https://waffle.io/d6y/demosaic)
 # Processing Visual Monitoring Camera (VMC) images from Mars Express
 
 [mosaic]: http://en.wikipedia.org/wiki/Demosaicing
