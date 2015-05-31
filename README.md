@@ -41,6 +41,15 @@ cat("15-102_03.53.54_VMC_Img_No_33.raw") |> grayscale |> write("out.png")
 ...which isn't great, compared to the [same image run through a set of tools on Flickr](https://www.flickr.com/photos/esa_marswebcam/16968680597/). But the aim is to improve on what we have here.
 
 
+## Comparisons
+
+For comparison, this project contains:
+
+- *15-102_03.53.54_VMC_Img_No_33.raw* -- a raw VMC image file.
+- *15-102_03.53.54_VMC_Img_No_33_rgb.png* --- the output from the vmc2rgb.exe tool.
+- *15-102_03.53.54_VMC_Img_No_33_rgb_flat.png* --- the output from the vmc2rgb.exe tool with flat fielding.
+- *15-102_03.53.54_VMC_Img_No_33-gray.png* --- grayscale output from this project.
+
 ## Resources
 
 - http://blogs.esa.int/vmc/vmc-data-archive/
